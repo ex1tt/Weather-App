@@ -1,8 +1,7 @@
 # WEATHER APP
-# Made by Albert Murphy [ex1tt]
-# Feel free to use this
-# You should get your own API
-# https://github.com/ex1tt
+# Made by ex1tt https://github.com/ex1tt
+# You should get your own Weather API https://api.openweathermap.org/
+# Weather Forecast may not be 100% accurate
 
 import tkinter as tk
 import requests
@@ -14,7 +13,7 @@ root.title("Weather App")
 root.resizable(0, 0)
 
 #  All Locations
-locations = ['Cork', 'Dublin', 'London', 'Paris']
+locations = ['Cork', 'Berlin', 'London', 'Paris', 'Tokyo', 'Sydney']
 
 #  Creating variables before defined in functions
 api_key = ''
@@ -25,11 +24,15 @@ timezone = ''
 #  ALL API KEYS
 api_key_cork = 'http://api.openweathermap.org/data/2.5/weather?q=Cork&appid=94a593b645d0ba85af5528ac0d802f52'
 
-api_key_dublin = 'http://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=94a593b645d0ba85af5528ac0d802f52'
+api_key_berlin = 'http://api.openweathermap.org/data/2.5/weather?q=Berlin&appid=94a593b645d0ba85af5528ac0d802f52'
 
 api_key_london = 'http://api.openweathermap.org/data/2.5/weather?q=London&appid=94a593b645d0ba85af5528ac0d802f52'
 
 api_key_paris = 'http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=94a593b645d0ba85af5528ac0d802f52'
+
+api_key_tokyo = 'https://api.openweathermap.org/data/2.5/weather?q=Tokyo&appid=94a593b645d0ba85af5528ac0d802f52'
+
+api_key_sydney = 'https://api.openweathermap.org/data/2.5/weather?q=Sydney&appid=94a593b645d0ba85af5528ac0d802f52'
 
 
 #  Running all functions together
@@ -48,12 +51,16 @@ def get_api_key():
 
     if str(location_chosen_get) == 'Cork':
         api_key = api_key_cork
-    elif str(location_chosen_get) == 'Dublin':
-        api_key = api_key_dublin
+    elif str(location_chosen_get) == 'Berlin':
+        api_key = api_key_berlin
     elif str(location_chosen_get) == 'London':
         api_key = api_key_london
     elif str(location_chosen_get) == 'Paris':
         api_key = api_key_paris
+    elif str(location_chosen_get) == 'Tokyo':
+        api_key = api_key_tokyo
+    elif str(location_chosen_get) == 'Sydney':
+        api_key = api_key_sydney
 
 
 #  Create Function To Show Temp Of Chosen Location
@@ -101,3 +108,4 @@ location_btn.place(x=230, y=21)
 
 
 root.mainloop()
+
